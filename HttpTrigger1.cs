@@ -27,9 +27,9 @@ namespace Company.Function
                 return new BadRequestObjectResult("Please pass both firstName and lastName in the query string.");
             }
 
-            string responseMessage = $"Hello, {firstName} {lastName}. Welcome to my app!";
+            var user = new { firstName = firstName, lastName = lastName };
 
-            return new OkObjectResult(responseMessage);
+            return new OkObjectResult(user);
         }
     }
 }
